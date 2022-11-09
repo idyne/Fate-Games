@@ -21,23 +21,23 @@ namespace FateGames
 
         public static void CreateUILevelText()
         {
-            levelText = Instantiate(PrefabManager.Instance.GetPrefab("UILevelText")).GetComponent<UILevelText>();
+            levelText = Instantiate(PrefabManager.Prefabs["UILevelText"]).GetComponent<UILevelText>();
         }
         public static void CreateUIWinScreen()
         {
-            winScreen = Instantiate(PrefabManager.Instance.GetPrefab("UIWinScreen")).GetComponent<UIWinScreen>();
+            winScreen = Instantiate(PrefabManager.Prefabs["UIWinScreen"]).GetComponent<UIWinScreen>();
         }
         public static void CreateUILoseScreen()
         {
-            loseScreen = Instantiate(PrefabManager.Instance.GetPrefab("UILoseScreen")).GetComponent<UILoseScreen>();
+            loseScreen = Instantiate(PrefabManager.Prefabs["UILoseScreen"]).GetComponent<UILoseScreen>();
         }
         public static void CreateUIStartText()
         {
-            startText = Instantiate(PrefabManager.Instance.GetPrefab("UIStartText")).GetComponent<UIStartText>();
+            startText = Instantiate(PrefabManager.Prefabs["UIStartText"]).GetComponent<UIStartText>();
         }
         public static void CreateUILoadingScreen()
         {
-            loadingScreen = Instantiate(PrefabManager.Instance.GetPrefab("UILoadingScreen")).GetComponent<UILoadingScreen>();
+            loadingScreen = Instantiate(PrefabManager.Prefabs["UILoadingScreen"]).GetComponent<UILoadingScreen>();
         }
     }
 }

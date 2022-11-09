@@ -7,11 +7,15 @@ namespace FateGames
     {
         #region Properties
         private LevelManager levelManager;
+        [Header("Scene")]
         [SerializeField] private bool loadCurrentLevel = true;
+        [SerializeField] private int firstLevelIndex = 1;
+        [Header("UI")]
         [SerializeField] private ControlType controlType;
+        [SerializeField] private bool showLevelText = true;
+        [Header("Other")]
         [SerializeField] private int targetFrameRate = -1;
 
-        [SerializeField] private bool showLevelText = true;
 
         [HideInInspector] public LevelManager LevelManager { get => levelManager; }
         #endregion
@@ -19,7 +23,7 @@ namespace FateGames
         private void Initialize()
         {
             if (!AvoidDuplication()) return;
-            Application.targetFrameRate = targetFrameRate;
+            Application.targetFrameRate = targetFrameRate > 0 ? targetFrameRate : Screen.currentResolution.refreshRate;
             PlayerProgression.InitializePlayerData();
             AnalyticsManager.Initialize();
             if (loadCurrentLevel)
@@ -106,5 +110,5 @@ namespace FateGames
 
     }
     public enum GameState { LOADING_SCREEN, START_SCREEN, IN_GAME, PAUSE_SCREEN, FINISHED, COMPLETE_SCREEN }
-    public enum ControlType { JOYSTICK, SWIPE }
+    public enum ControlType { NONE, JOYSTICK, SWIPE }
 }

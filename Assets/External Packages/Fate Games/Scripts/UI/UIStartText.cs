@@ -20,12 +20,14 @@ namespace FateGames
 
         private void Start()
         {
+            ControlType controlType = GameManager.Instance.ControlType;
+            if (controlType == ControlType.NONE) return;
             for (int i = 0; i < tutorials.Length; i++)
             {
                 ControlTutorial tutorial = tutorials[i];
                 tutorialDictionary.Add(tutorial.Type, tutorial.Tutorial);
             }
-            tutorialDictionary[GameManager.Instance.ControlType].SetActive(true);
+            tutorialDictionary[controlType].SetActive(true);
         }
 
     }

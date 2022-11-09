@@ -28,9 +28,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7550869262896145937}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7667757451485429679
 MonoBehaviour:
@@ -66,60 +67,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!1 &6737401050159276911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2953685998438237124}
-  - component: {fileID: 2483078923270435540}
-  m_Layer: 0
-  m_Name: PrefabManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2953685998438237124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737401050159276911}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7550869262896145937}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2483078923270435540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737401050159276911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273b8f15052e78f4d816f18853eb6804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabs:
-  - tag: UIWinScreen
-    prefab: {fileID: 6325056537925031678, guid: 20d7e0cc158213548a2b205ea47d103b, type: 3}
-  - tag: UILoseScreen
-    prefab: {fileID: 7600341174994625540, guid: 917c8518b48399f478d57f1bd9976720, type: 3}
-  - tag: UILevelText
-    prefab: {fileID: 2255000933269326777, guid: 4e9babfa652e02049836bb3bf16169e3, type: 3}
-  - tag: UIStartText
-    prefab: {fileID: 4995387592999488576, guid: 96194223750bd984a93feeeb3f832f93, type: 3}
-  - tag: UILoadingScreen
-    prefab: {fileID: 8049931945610701668, guid: 791d409fa43d48641863321b260ffd6b, type: 3}
 --- !u!1 &7550869262896145936
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,9 +96,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6206411152806839875}
-  - {fileID: 2953685998438237124}
   - {fileID: 4369851571654949612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -168,8 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120c30ecf8a39bb49ae7e75c9b2c020d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadCurrentLevel: 1
+  firstLevelIndex: 1
   controlType: 0
   showLevelText: 1
+  targetFrameRate: -1
 --- !u!114 &3152360681380985851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +172,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7550869262896145937}
   m_RootOrder: 0

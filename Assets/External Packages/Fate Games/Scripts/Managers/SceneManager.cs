@@ -41,10 +41,14 @@ namespace FateGames
                 float progress = Mathf.Clamp01(operation.progress / .9f);
                 yield return null;
             }
-            if (GameManager.Instance.ShowLevelText)
-                UIManager.CreateUILevelText();
-            UIManager.CreateUIStartText();
-            GameManager.Instance.UpdateGameState(GameState.START_SCREEN);
+            if (operation.isDone)
+            {
+                ObjectPooler.CreatePools();
+                if (GameManager.Instance.ShowLevelText)
+                    UIManager.CreateUILevelText();
+                UIManager.CreateUIStartText();
+                GameManager.Instance.UpdateGameState(GameState.START_SCREEN);
+            }
         }
 
         public static void StartLevel()

@@ -24,7 +24,7 @@ namespace FateGames
             Queue<(Transform, float)> queue = new Queue<(Transform, float)>();
             for (int i = 0; i < 20; i++)
             {
-                Transform coin = ObjectPooler.Instance.SpawnFromPool("Coin Image", spreadCoinFrom.position, Quaternion.identity).transform;
+                Transform coin = ObjectPooler.SpawnFromPool("Coin Image", spreadCoinFrom.position, Quaternion.identity).transform;
                 coin.parent = transform;
                 //queue.Enqueue((coin, MainLevelManager.Instance.Coin / 20f));
                 coin.DOMove(coin.transform.position + new Vector3(Random.Range(-Screen.width / 15f, Screen.width / 15f), Random.Range(-Screen.width / 15f, Screen.width / 15f), 0), 0.4f)

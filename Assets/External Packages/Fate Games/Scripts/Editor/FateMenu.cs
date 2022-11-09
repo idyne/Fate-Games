@@ -2,6 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using FateGames;
 public class FateMenu : MonoBehaviour
 {
     // Add a menu item named "Do Something" to Fate in the menu bar.
@@ -12,6 +13,7 @@ public class FateMenu : MonoBehaviour
         if (File.Exists(path))
             File.Delete(path);
     }
+    
 
     // Validated menu item.
     // Add a menu item named "Log Selected Transform Name" to Fate in the menu bar.
@@ -50,6 +52,20 @@ public class FateMenu : MonoBehaviour
         Debug.Log(folderPath + screenshotName);
     }
 
+    [MenuItem("Fate/Tables/Pool Data Table")]
+    static void SelectPoolDataTable()
+    {
+        PoolDataTable table = Resources.Load<PoolDataTable>("Fate Games/ScriptableObjects/PoolDataTables/Game Pool Data");
+        Selection.activeObject = table;
+    }
+
+    [MenuItem("Fate/Tables/Prefab Table")]
+    static void SelectPrefabTable()
+    {
+        GameObjectTable table = Resources.Load<GameObjectTable>("Fate Games/ScriptableObjects/GameObjectTables/Prefab Table");
+        Selection.activeObject = table;
+    }
+
     // Add a menu item called "Double Mass" to a Rigidbody's context menu.
     /*[MenuItem("CONTEXT/Rigidbody/Double Mass")]
     static void DoubleMass(MenuCommand command)
@@ -62,7 +78,7 @@ public class FateMenu : MonoBehaviour
     // Add a menu item to create custom GameObjects.
     // Priority 1 ensures it is grouped with the other menu items of the same kind
     // and propagated to the hierarchy dropdown and hierarchy context menus.
-    [MenuItem("GameObject/Fate/Object Pooler", false, 0)]
+    /*[MenuItem("GameObject/Fate/Object Pooler", false, 0)]
     static void CreateCustomGameObject(MenuCommand menuCommand)
     {
         // Create a custom game object
@@ -74,5 +90,5 @@ public class FateMenu : MonoBehaviour
         // Register the creation in the undo system
         Undo.RegisterCreatedObjectUndo(go, "Create " + go.name);
         Selection.activeObject = go;
-    }
+    }*/
 }
